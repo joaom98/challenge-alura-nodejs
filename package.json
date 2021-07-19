@@ -1,0 +1,14 @@
+{
+  "name": "back-end-node",
+  "version": "1.0.0",
+  "description": "Backend do alura challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jm",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
