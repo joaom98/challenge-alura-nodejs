@@ -1,0 +1,12 @@
+{
+    "postgres": {
+        "banco-de-dados": "jm",
+        "usuario": "jm",
+        "senha": "teste",
+        "host": "127.0.0.1",
+        "port": 7999
+    },
+    "api": {
+        "port": 3000
+    }
+}
