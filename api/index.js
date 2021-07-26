@@ -1,10 +1,9 @@
 const express = require('express')
-const app = express();
 const config = require('config');
+const roteador = require('./rotas');
 
-app.use(express.json());
+const app = express();
 
-const roteador = require('./rotas/videos');
-app.use('/api/videos', roteador);
+roteador(app);
 
 app.listen(config.get('api.port'), () => console.log("ouvindo na porta " + config.get('api.port').toString() ));
