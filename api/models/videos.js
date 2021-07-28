@@ -14,9 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Videos.init({
-    titulo: DataTypes.STRING,
-    descricao: DataTypes.STRING,
-    url: DataTypes.STRING
+    titulo: {
+      type: DataTypes.STRING(50),
+      allowNull: false
+    },
+    descricao: {
+      type: DataTypes.STRING(300),
+      allowNull: false
+    },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Videos',
