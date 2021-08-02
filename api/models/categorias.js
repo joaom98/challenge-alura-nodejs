@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Videos extends Model {
+  class Categorias extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,28 +13,20 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  Videos.init({
-    titulo: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
-    descricao: {
-      type: DataTypes.STRING(300),
-      allowNull: false
-    },
-    url: {
-      type: DataTypes.STRING,
-      allowNull: false,
+  Categorias.init({
+    titulo: DataTypes.STRING,
+    cor: {
+      type: DataTypes.STRING(7),
       validate: {
-        isUrl: {
-          msg: "A URL precisa estar em um formato válido"
+        is: {
+          args: ["^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"],
+          msg: "A cor deve ser um hexadecimal de 3 ou 6 caracteres iniciado por um #"
         }
       }
     }
   }, {
     sequelize,
-    modelName: 'Videos',
-    timestamps: false
+    modelName: 'Categorias',
   });
-  return Videos;
+  return Categorias;
 };
